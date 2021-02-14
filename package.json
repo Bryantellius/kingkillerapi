@@ -1,0 +1,16 @@
+{
+  "name": "kingkillerapi",
+  "version": "1.0.0",
+  "description": "API for Patrick Rothfuss' KingKiller Chronicle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Bryant",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "rotating-file-stream": "^2.1.4"
+  }
+}

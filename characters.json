@@ -1,0 +1,39 @@
+{
+  "list": [
+    {
+      "name": "Kvothe",
+      "gender": "male",
+      "ethnicity": "Edema Ruh",
+      "skin": "pale",
+      "hair": "red",
+      "eye-color": "green",
+      "family-members": [
+        {
+          "name": "Arliden",
+          "relation": "Father"
+        },
+        {
+          "name": "Laurian",
+          "relation": "Mother"
+        }
+      ],
+      "occupations": ["University student", "Musician", "Innkeeper"],
+      "study": [
+        "Artificing",
+        "Medica",
+        "Naming",
+        "Sympathy",
+        "Arithmetic",
+        "Siaru"
+      ],
+      "rank": "Re'lar",
+      "residences": [
+        "Tarbean",
+        "Mews, The University",
+        "Horse and Four, The University",
+        "Ankers, The University",
+        "Waystone Inn, Newarre"
+      ]
+    }
+  ]
+}

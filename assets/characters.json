@@ -1,0 +1,148 @@
+{
+  "list": [
+    {
+      "name": "Kvothe",
+      "gender": "male",
+      "ethnicity": "Edema Ruh",
+      "skin": "pale",
+      "hair": "red",
+      "eye-color": "green",
+      "family-members": [
+        {
+          "name": "Arliden",
+          "relation": "Father"
+        },
+        {
+          "name": "Laurian",
+          "relation": "Mother"
+        }
+      ],
+      "occupations": ["University student", "Musician", "Innkeeper"],
+      "study": [
+        "Artificing",
+        "Medica",
+        "Naming",
+        "Sympathy",
+        "Arithmetic",
+        "Siaru"
+      ],
+      "rank": "Re'lar",
+      "instruments": ["lute"],
+      "residences": [
+        "Tarbean",
+        "Mews, The University",
+        "Horse and Four, The University",
+        "Ankers, The University",
+        "Waystone Inn, Newarre"
+      ],
+      "image-url": "https://static.wikia.nocookie.net/nameofthewind/images/0/04/Kvothedd.jpg/revision/latest/scale-to-width-down/126?cb=20170316011707",
+      "image-credit": "http://djamilaknopf.deviantart.com/art/The-Kingkiller-Chronicle-Kvothe-521006255%7CDjamila"
+    },
+    {
+      "name": "Elodin",
+      "gender": "male",
+      "ethnicity": null,
+      "skin": "white/tanned",
+      "hair": "dark brown",
+      "eye-color": "dark brown/black",
+      "family-members": null,
+      "occupations": ["University Master"],
+      "study": ["Naming"],
+      "rank": "Arcanist",
+      "instruments": null,
+      "residences": ["Crookery, The University"],
+      "image-url": "https://static.wikia.nocookie.net/nameofthewind/images/d/d3/Master_elodin.jpg/revision/latest/scale-to-width-down/162?cb=20120430201606",
+      "image-credit": "http://amywinterbreeze.deviantart.com/art/Smile-young-master-250942952"
+    },
+    {
+      "name": "Denna",
+      "gender": "female",
+      "ethnicity": null,
+      "skin": "white/tanned",
+      "hair": "dark",
+      "eye-color": "dark",
+      "family-members": null,
+      "occupations": ["Courtesan", "Con Artist", "Musician"],
+      "study": null,
+      "rank": null,
+      "instruments": ["lyre", "harp"],
+      "residences": null,
+      "image-url": "https://static.wikia.nocookie.net/nameofthewind/images/2/21/Denna_by_abey.png/revision/latest/scale-to-width-down/90?cb=20160804062703",
+      "image-credit": "https://abbeytexjohnson.com/portfolio/denna-kingkiller-chronicle-fanart//"
+    },
+    {
+      "name": "Abenthy",
+      "gender": "male",
+      "ethnicity": null,
+      "skin": "white",
+      "hair": "gray",
+      "eye-color": null,
+      "family-members": null,
+      "occupations": ["Arcanist", "Kvothe's Teacher"],
+      "study": ["Naming", "Sympathy", "Sygaldry", "Chemistry", "Alchemy"],
+      "rank": "Arcanist",
+      "instruments": null,
+      "residences": null,
+      "image-url": "https://static.wikia.nocookie.net/nameofthewind/images/6/61/Abenthy_and_child_kvothe_by_tintaratitornin-d7uj2if.jpg/revision/latest/scale-to-width-down/310?cb=20150403003128",
+      "image-credit": "https://kingkiller.fandom.com/wiki/Abenthy"
+    },
+    {
+      "name": "Simmon",
+      "gender": "male",
+      "ethnicity": "Aturan",
+      "skin": "pale",
+      "hair": "sandy",
+      "eye-color": "light",
+      "family-members": [
+        {
+          "name": "Duke of Dalonir",
+          "relation": "Father"
+        }
+      ],
+      "occupations": ["University student"],
+      "study": ["Alchemy", "Poetry"],
+      "rank": "Re'lar",
+      "instruments": null,
+      "residences": null,
+      "image-url": "https://static.wikia.nocookie.net/nameofthewind/images/9/96/Simmon1.png/revision/latest/scale-to-width-down/123?cb=20190301221041",
+      "image-credit": "https://kingkiller.fandom.com/wiki/Simmon"
+    },
+    {
+      "name": "Wilem",
+      "gender": "male",
+      "ethnicity": "Cealdish",
+      "skin": "dark",
+      "hair": "dark",
+      "eye-color": "dark",
+      "family-members": null,
+      "occupations": ["University student", "Scriv"],
+      "study": ["Alchemy", "Sympathy"],
+      "rank": "Re'lar",
+      "instruments": null,
+      "residences": null,
+      "image-url": "https://static.wikia.nocookie.net/nameofthewind/images/0/08/Will.png/revision/latest/scale-to-width-down/123?cb=20190302142556",
+      "image-credit": "https://kingkiller.fandom.com/wiki/Wilem"
+    },
+    {
+      "name": "Lerand Alveron",
+      "gender": "male",
+      "ethnicity": "Vintish",
+      "skin": "pale",
+      "hair": "dark",
+      "eye-color": "gray",
+      "family-members": [
+        {
+          "name": "Meluan Lackless",
+          "relation": "Wife"
+        }
+      ],
+      "occupations": ["Maershon of Vintas"],
+      "study": null,
+      "rank": null,
+      "instruments": null,
+      "residences": ["Severen, Vintas"],
+      "image-url": "https://64.media.tumblr.com/aa522c892a65e44dcf1b52b20a428c3e/tumblr_pzdjgvfTrR1uks51xo1_500.jpg",
+      "image-credit": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tumgir.com%2Ftag%2FMaer%2520Alveron&psig=AOvVaw2zFjwrXcBUdCi13YezCNCP&ust=1613427084533000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCJDVx7uy6u4CFQAAAAAdAAAAABAD"
+    }
+  ]
+}

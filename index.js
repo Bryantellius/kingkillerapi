@@ -1,8 +1,8 @@
 const express = require("express");
-const fs = require("fs");
 const path = require("path");
 const morgan = require("morgan");
 const rfs = require("rotating-file-stream");
+const router = require("./routes");
 
 const port = parseInt(process.env.PORT) || 3000;
 const app = express();
@@ -16,13 +16,7 @@ var accessLogStream = rfs.createStream("access.log", {
 // setup the logger
 app.use(morgan("combined", { stream: accessLogStream }));
 
-app.get("/characters", (req, res, next) => {
-  try {
-    res.sendFile(path.join(__dirname, "characters.json"));
-  } catch (err) {
-    next(err);
-  }
-});
+app.use(router);
 
 app.use((err, req, res, next) => {
   console.log(err.stack);

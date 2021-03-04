@@ -16,7 +16,7 @@ var accessLogStream = rfs.createStream("access.log", {
 // setup the logger
 app.use(morgan("combined", { stream: accessLogStream }));
 
-app.use(router);
+app.use("/api/v1", router);
 
 app.use((err, req, res, next) => {
   console.log(err.stack);

@@ -3,6 +3,6 @@ const characterRouter = require("./characters");
 
 const router = express.Router();
 
-router.use("/api/v1", characterRouter);
+router.use("/characters", characterRouter);
 
 module.exports = router;

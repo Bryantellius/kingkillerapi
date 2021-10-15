@@ -8,3 +8,5 @@
 ::1 - - [14/Feb/2021:22:33:25 +0000] "GET /api/v1/characters HTTP/1.1" 500 25 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.68"
 ::1 - - [14/Feb/2021:22:34:15 +0000] "GET /api/v1/characters HTTP/1.1" 200 5210 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.68"
 ::1 - - [04/Mar/2021:19:54:42 +0000] "GET /api/v1/characters HTTP/1.1" 200 5062 "-" "PostmanRuntime/7.26.10"
+::1 - - [15/Oct/2021:12:55:34 +0000] "POST /api/v1/characters HTTP/1.1" 404 157 "-" "PostmanRuntime/7.28.4"
+::1 - - [15/Oct/2021:12:55:39 +0000] "GET /api/v1/characters HTTP/1.1" 200 - "-" "PostmanRuntime/7.28.4"

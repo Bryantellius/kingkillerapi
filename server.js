@@ -1,11 +1,18 @@
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
+const cors = require("cors");
+const helmet = require("helmet");
+const compression = require("compression");
 const rfs = require("rotating-file-stream");
 const router = require("./routes");
 
 const port = parseInt(process.env.PORT) || 3000;
 const app = express();
+
+app.use(helmet());
+app.use(compression());
+app.use(cors());
 
 // create a rotating write stream
 var accessLogStream = rfs.createStream("access.log", {

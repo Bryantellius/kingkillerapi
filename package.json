@@ -4,12 +4,17 @@
   "description": "API for Patrick Rothfuss' KingKiller Chronicle",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Ben Bryant",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "helmet": "^4.6.0",
     "morgan": "^1.10.0",
     "rotating-file-stream": "^2.1.4"
   }

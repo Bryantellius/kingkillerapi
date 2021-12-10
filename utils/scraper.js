@@ -1,61 +1,86 @@
 const cheerio = require("cheerio");
 const axios = require("axios").default;
 const { writeFile } = require("fs");
+const { join } = require("path");
 
 let baseURL = "https://kingkiller.fandom.com";
-let characters = [];
+let dataName = "characters"; // rename per data pull
+
+let datalist = [];
 let expectedLength = 0;
 
-async function pullCharacters() {
+async function pullData() {
   try {
     let { data } = await axios.get(
-      "https://kingkiller.fandom.com/wiki/Category:Characters"
+      `https://kingkiller.fandom.com/wiki/Category:${
+        dataName[0].toUpperCase() + dataName.slice(1)
+      }`
     );
     let $ = cheerio.load(data);
-    let charactersHTML = $("li.category-page__member > a");
-    expectedLength = charactersHTML.length;
-    for (let ele of charactersHTML) {
-      if (!$(ele).text().includes("Category")) {
-        pullSingleCharacter(baseURL + ele.attribs.href, $(ele).text());
+    let datalistHTML = $("li.category-page__member > a");
+    expectedLength = datalistHTML.length;
+    for (let ele of datalistHTML) {
+      if (
+        !$(ele).text().includes("Category") &&
+        !$(ele).text().includes("File")
+      ) {
+        pullSingleData(baseURL + ele.attribs.href, $(ele).text());
       } else {
         expectedLength--;
       }
     }
-    // pullSingleCharacter(
-    //   baseURL + $("li.category-page__member > a")[0].attribs.href
-    // );
   } catch (e) {
     console.error(e);
   }
 }
 
-async function pullSingleCharacter(url, title) {
+async function pullSingleData(url, title) {
   let { data } = await axios.get(url);
   let char = {};
   let $ = cheerio.load(data);
-  for (let ele of $("aside")[0].children) {
-    if ($(ele).attr("data-source") == "name") {
-      char[$(ele).attr("data-source")] = $(ele).text();
-    } else if (ele.name == "section") {
-      let details = {};
-      let extracted = [];
 
-      let divs = ele.children.filter((ele) => ele.name == "div");
+  if (!$("aside")[0]) {
+    char.name = title;
+    char.details = "No details";
+  } else {
+    for (let ele of $("aside")[0].children) {
+      if ($(ele).attr("data-source") == "name") {
+        char[$(ele).attr("data-source")] = $(ele).text();
+      } else if (ele.name == "section") {
+        let details = {};
+        let extracted = [];
 
-      for (let div of divs) {
-        for (let prop of div.children) {
-          if ($(prop).text().replace(/\n|\t/g, "")) {
-            extracted.push($(prop).text());
+        let divs = ele.children.filter((ele) => ele.name == "div");
+        let lis = [];
+
+        for (let div of divs) {
+          for (let prop of div.children) {
+            if ($(prop).text().replace(/\n|\t/g, "")) {
+              if (prop.children[0].name == "ul") {
+                for (let li of prop.children[0].children) {
+                  lis.push($(li.children[0]).text().replace(/\n|\t/g, ""));
+                }
+              } else {
+                if (lis.length > 0) {
+                  extracted.push(lis);
+                  lis = [];
+                }
+                extracted.push($(prop).text().replace(/\n|\t/g, ""));
+              }
+            }
           }
         }
-      }
 
-      for (let i = 0; i < extracted.length; i++) {
-        if (i % 2 == 0) {
-          details[extracted[i]] = extracted[i + 1];
+        for (let i = 0; i < extracted.length; i++) {
+          if (i % 2 == 0) {
+            details[extracted[i].toLowerCase().replace(/ /g, "_")] =
+              extracted[i + 1];
+          }
         }
+        char[
+          ele.children[1].children[0].data.toLowerCase().replace(/ /g, "_")
+        ] = details;
       }
-      char[ele.children[1].children[0].data] = details;
     }
   }
 
@@ -64,15 +89,19 @@ async function pullSingleCharacter(url, title) {
     char.details = "No details";
   }
 
-  characters.push(char);
-  console.log(characters.length, expectedLength);
+  datalist.push(char);
+  console.log(`${datalist.length}/${expectedLength}`);
 
-  if (characters.length == expectedLength)
-    writeFile("./characters.json", JSON.stringify(characters), (err) => {
-      if (err) return console.error(err);
+  if (datalist.length == expectedLength)
+    writeFile(
+      join(__dirname, `../assets/${dataName}.json`),
+      JSON.stringify(datalist),
+      (err) => {
+        if (err) return console.error(err);
 
-      console.log("Overwrote characters.json file ✅");
-    });
+        console.log(`Overwrote ${dataName}.json file ✅`);
+      }
+    );
 }
 
-pullCharacters();
+pullData();

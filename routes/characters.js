@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get("/", (req, res, next) => {
   try {
-    let charactersFile = path.join(__dirname, "../characters.json");
+    let charactersFile = path.join(__dirname, "../assets/characters.json");
     let { name } = req.query;
 
     if (name) {
